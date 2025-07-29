@@ -1,0 +1,21 @@
+// colors that can change
+html {
+  --color-primary: #5a67d8;
+  --color-bg: #fff;
+  --color-text: #222;
+}
+
+html[data-theme='dark'] {
+  --color-bg: #111;
+  --color-text: #eee;
+}
+
+$bg: #f9f9f9;
+
+// Spacing
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+
+// Fonts
+$font-family-base: 'Helvetica Neue', Helvetica, Arial, sans-serif;

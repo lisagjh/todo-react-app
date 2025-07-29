@@ -1,0 +1,17 @@
+@import 'base';
+@import 'variables';
+@import 'mixins';
+
+// header
+.header {
+    @include flex-center;
+    gap: 1rem;
+    padding: $spacing-lg 0;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-text);
+    
+    &__title {
+        font-size: 1.25rem;
+    }
+}
