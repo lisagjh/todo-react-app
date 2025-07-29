@@ -5,13 +5,15 @@
 // header
 .header {
     @include flex-center;
+    justify-content: space-between;
     gap: 1rem;
-    padding: $spacing-lg 0;
+    padding: $spacing-lg $spacing-md;
     background-color: var(--color-bg);
     color: var(--color-text);
     border-bottom: 1px solid var(--color-text);
-    
-    &__title {
-        font-size: 1.25rem;
+
+    &__icon {
+        width: 2rem;
+        height: 2rem;
     }
 }
