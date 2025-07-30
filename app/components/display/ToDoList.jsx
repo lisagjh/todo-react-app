@@ -7,17 +7,27 @@ export default function ToDoList(){
     const [allTasks, setAllTasks] = useState([]);
     const [inputValue, setInputValue] = useState("");
 
+    // Filter tasks by status
+    const todoTasks = allTasks.filter(task => task.status === "todo");
+    const doneTasks = allTasks.filter(task => task.status === "done");
+
     function addTask(newTask){
         if (newTask !== "") {
-            setTaskList([...taskList, newTask]);
+            const taskObject = {
+                id: Date.now(), // generate id
+                text: newTask, // set text as input value
+                status: "todo" // set status as todo
+            };
+            setAllTasks([...allTasks, taskObject]); // Voegt object toe
         }
-        console.log(taskList);
     }
     
-    function completeTask(index){
-        const task = taskList[index];
-        setTaskList(taskList.filter((_, i) => i !== index));
-        setFinishedTasks([...finishedTasks, task]);
+    function completeTask(taskId){
+        setAllTasks(allTasks.map(task => 
+            task.id === taskId 
+                ? { ...task, status: "done" } // change status to done
+                : task // leave other tasks as is
+        ));
     }
     
     // on submit, prevent default, add new task, reset input field
@@ -48,26 +58,25 @@ export default function ToDoList(){
                 />
             </form>
 
-            {taskList.length > 0 ? (
-                <ul className="todo__list"> 
-                    {taskList.map((task, index) => (
-                        <li className="todo__task" key={index}>
-                            <div className="buttons">
-                                <button 
-                                    className="todo__task__button" 
-                                    onClick={() => completeTask(index)}
-                                    aria-label="Complete task">
-                                </button>
-                            </div>
-                            
-                            {task}
-                            
-                        </li>
-                    ))}
-                </ul>
-            ) : (
-                <p className="todo__empty">No tasks yet</p>
-            )}
+            {allTasks.length > 0 ? (
+                <div className="todo__sections">
+                    {/* Todo */}
+                    {todoTasks.length > 0 && (
+                        <div className="todo__section">
+                            <h2>To Do ({todoTasks.length})</h2>
+                            <ul className="todo__list"> 
+                                {todoTasks.map((task) => (
+                                    <li key={task.id}> {/* use ID as key */}
+                                        <span>{task.text}</span> {/* task.text as content */}
+                                        <button onClick={() => completeTask(task.id)}>v</button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                </div>
+                ) : <p>No tasks yet</p>
+            }
             
         </>
     )
