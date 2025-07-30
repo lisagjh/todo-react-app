@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home";
 import '../styles/main.scss';
 
-import ToDoList from "../components/archive/display/ToDoList";
+import ToDoList from "../components/display/ToDoList";
 
 export function meta({}: Route.MetaArgs) {
   return [
