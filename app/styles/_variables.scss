@@ -1,21 +1,35 @@
 // colors that can change
 html {
-  --color-primary: #5a67d8;
-  --color-bg: #fff;
-  --color-text: #222;
+  /* Primary HSL */
+  --blue-500: hsl(220, 98%, 61%);
+  --check-background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+  /* Light Theme Colors */
+  --gray-50: hsl(0, 0%, 98%);
+  --purple-300: hsl(234, 39%, 85%);
+  --gray-300: hsl(233, 11%, 84%);
+  --gray-600: hsl(236, 9%, 61%);
+  --navy-850: hsl(235, 19%, 35%);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 html[data-theme='dark'] {
-  --color-bg: #111;
-  --color-text: #eee;
+  /* Dark Theme Colors */
+  --navy-950: hsl(235, 21%, 11%);
+  --navy-900: hsl(235, 24%, 19%);
+  --purple-100-hover: hsl(236, 33%, 92%);
+  --purple-300: hsl(234, 39%, 85%);
+  --purple-600: hsl(235, 16%, 43%);
+  --purple-700: hsl(233, 14%, 35%);
+  --purple-800: hsl(237, 14%, 26%);
+  --gray-600: hsl(236, 9%, 61%);
 }
-
-$bg: #f9f9f9;
 
 // Spacing
 $spacing-sm: 0.5rem;
 $spacing-md: 1rem;
 $spacing-lg: 2rem;
 
-// Fonts
-$font-family-base: 'Helvetica Neue', Helvetica, Arial, sans-serif;

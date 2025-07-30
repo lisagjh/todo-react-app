@@ -6,13 +6,7 @@ export default function Header() {
 
     return (
         <header className="header">
-            {isDark ? (
-                <img src="./assets/favicon-dark.svg" alt="icon" className="header__icon" />
-
-            ) : (
-                <img src="./assets/favicon.svg" alt="icon" className="header__icon" />
-            )}
-
+            <h1>TODO</h1>
             <DarkModeToggle />
         </header>
     );

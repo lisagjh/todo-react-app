@@ -4,16 +4,28 @@
 
 // header
 .header {
-    @include flex-center;
+    display: flex;
     justify-content: space-between;
     gap: 1rem;
-    padding: $spacing-lg $spacing-md;
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    border-bottom: 1px solid var(--color-text);
+    padding: $spacing-md;
+    min-height: 30vh;
+    background-color: var(--navy-950);
+    color: var(--gray-50);
+
+    background-image: url(/public/assets/bg-mobile-light.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__icon, h1 {
+        margin-top: 2rem;
+    }
 
     &__icon {
         width: 2rem;
         height: 2rem;
     }
+}
+
+html[data-theme='dark'] .header {
+    background-image: url(/public/assets/bg-mobile-dark.jpg);
 }

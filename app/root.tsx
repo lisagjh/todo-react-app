@@ -9,9 +9,9 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import "./app.css";
+import "./styles/main.scss";
 import Header from "./components/display/Header";
-import { ThemeProvider } from "./components/context/ThemeContext"; // importeer provider
+import { ThemeProvider } from "./components/context/ThemeContext"; // theme context provider, to share state between DarkModeToggle and Header
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },

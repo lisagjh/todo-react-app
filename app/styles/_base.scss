@@ -1,18 +1,39 @@
 @import 'variables';
 
+$font-path: "../fonts";
+
+
+@font-face {
+    // This is parsed as a normal function call that takes a quoted string.
+    src: url("#{$font-path}/GeneralSans-Variable.woff2") format("woff2");
+
+    font-family: "General Sans";
+    font-weight: 500;
+}
+
+@font-face {
+  // This is parsed as a normal function call that takes a quoted string.
+  src: url("#{$font-path}/Boska-Variable.woff2") format("woff2");
+
+  font-family: "Boska";
+  font-weight: 800;
+}
+
 // reset and base styles
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: .25s ease-in-out;
   }
   
   html,
   body {
     height: 100%;
     overscroll-behavior: none;
-    color: var(--color-text);
-    background-color: var(--color-bg);
+    color: var(--navy-850);
+    background-color: var(--gray-50);
+    font-family: "General Sans", sans-serif;
   }
   
   body {
@@ -25,11 +46,34 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    padding: $spacing-lg;
+    gap: $spacing-lg;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "General Sans", sans-serif;
   }
 
   *:focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--blue-500);
     outline-offset: 2px;
+  }
+
+  a, button {
+    cursor: pointer;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
   }
