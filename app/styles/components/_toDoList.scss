@@ -18,7 +18,7 @@
         width: 100%;
         border-radius: 0.15rem;
         color: var(--navy-850);
-        background-color: var(--gray-30);
+        background-color: var(--gray-50);
         border: none;
 
         &:focus-visible {
@@ -45,6 +45,26 @@
     }
 }
 
+.todo__sections {
+    background-color: var(--gray-50);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: .5rem;
+    padding: $spacing-md 0;
+    box-shadow: var(--shadow-md);
+    border-radius: .5rem;
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        padding: $spacing-sm $spacing-sm;
+        font-size: .9rem;
+        font-weight: 400;
+        color: var(--gray-600);
+    }
+}
+
 .todo__list {
     display: flex;
     flex-direction: column;
@@ -52,31 +72,29 @@
     align-items: center;
     gap: 0.5rem;
     width: 100%;
-    background-color: var(--gray-50);
-    border-radius: .5rem;
-    box-shadow: var(--shadow-md);
+    list-style: "";
 }
 
 .todo__task {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 10% 1fr 10%;
     gap: 0.5rem;
     width: 100%;
     padding: $spacing-md;
-    background-color: var(--gray-30);
     border-bottom: 1px solid var(--gray-300);
+    transition: .25s ease-in-out;
 
     &:last-of-type {
         border-bottom: none;
     }
 
-    & button {
+    &__complete_button,&__delete_button {
+        display: grid;
+        place-items: center;
         height: 1.5rem;
         aspect-ratio: 1 / 1;
         border: 1px solid var(--gray-300);
         background-color: transparent;
-        background: none;
         border-radius: 50%;
 
         &:hover {
@@ -86,5 +104,28 @@
         &:active {
             scale: 0.95;
         }
+    }
+
+    &__delete_button {
+        border: none;
+        padding: .25rem;
+
+        & img {
+            height: .75rem;
+            aspect-ratio: 1 / 1;
+        }
+
+        &:hover {
+            background-color: var(--purple-300);
+        }
+    }
+}
+
+.todo__task__completed {
+    text-decoration: line-through;
+    color: var(--gray-600);
+
+    & button:first-of-type {
+        background: var(--check-background);
     }
 }

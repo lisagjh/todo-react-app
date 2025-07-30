@@ -5,7 +5,7 @@ html {
   --check-background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 
   /* Light Theme Colors */
-  --gray-50: hsl(0, 0%, 98%);
+  --gray-50: hsl(0, 0%, 99%);
   --purple-300: hsl(234, 39%, 85%);
   --gray-300: hsl(233, 11%, 84%);
   --gray-600: hsl(236, 9%, 61%);
@@ -26,6 +26,11 @@ html[data-theme='dark'] {
   --purple-700: hsl(233, 14%, 35%);
   --purple-800: hsl(237, 14%, 26%);
   --gray-600: hsl(236, 9%, 61%);
+
+  // rewriting to light theme names
+  --gray-50: hsl(235, 24%, 19%);
+  --gray-300: hsl(235, 21%, 11%);
+  --navy-850: hsl(235, 19%, 35%);
 }
 
 // Spacing
