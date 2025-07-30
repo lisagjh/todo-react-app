@@ -58,7 +58,7 @@
     &__info {
         display: flex;
         justify-content: space-between;
-        padding: $spacing-sm $spacing-sm;
+        padding: $spacing-sm $spacing-md;
         font-size: .9rem;
         font-weight: 400;
         color: var(--gray-600);
@@ -83,10 +83,6 @@
     padding: $spacing-md;
     border-bottom: 1px solid var(--gray-300);
     transition: .25s ease-in-out;
-
-    &:last-of-type {
-        border-bottom: none;
-    }
 
     &__complete_button,&__delete_button {
         display: grid;
@@ -127,5 +123,39 @@
 
     & button:first-of-type {
         background: var(--check-background);
+    }
+}
+
+.todo__view__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    padding: $spacing-sm;
+    background-color: var(--gray-50);
+    border-radius: .5rem;
+    box-shadow: var(--shadow-md);
+
+    & button {
+        background-color: transparent;
+        padding: $spacing-sm $spacing-md;
+        border: none;
+        border-radius: .25rem;
+        cursor: pointer;
+        transition: .25s ease-in-out;
+
+        &:hover {
+            background-color: var(--gray-100);
+        }
+
+        &:active {
+            scale: 0.95;
+        }
+    }
+
+    & .active {
+        color: var(--blue-500);
     }
 }

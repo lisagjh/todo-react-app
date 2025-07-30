@@ -96,6 +96,12 @@ export default function ToDoList(){
                 ) : <p>No tasks yet</p>
             }
             
+            <div className="todo__view__buttons">
+                <button className="todo__view__button active">All</button>
+                <button className="todo__view__button">To Do</button>
+                <button className="todo__view__button">Completed</button>
+            </div>
+
         </>
     )
 }
