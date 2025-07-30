@@ -27,6 +27,12 @@ export default function ToDoList(){
                 : task // leave other tasks as is
         ));
     }
+
+    // delete task - using the .filter method to create a new array that does include the task with the ID we want to delete
+    // then we set the allTasks state to the new array
+    function deleteTask(taskID) {
+        setAllTasks((prevTasks) => prevTasks.filter(task => task.id !== taskID));
+    }
     
     // on submit, prevent default, add new task, reset input field
     function handleSubmit(e){
@@ -67,6 +73,8 @@ export default function ToDoList(){
                                     <li key={task.id}> {/* use ID as key */}
                                         <span>{task.text}</span> {/* task.text as content */}
                                         <button onClick={() => completeTask(task.id)}>v</button>
+                                        <button onClick={() => deleteTask(task.id)}>x</button>
+
                                     </li>
                                 ))}
                             </ul>
