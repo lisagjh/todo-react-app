@@ -2,8 +2,6 @@ import "../../styles/components/_toDoList.scss";
 import { useState } from "react";
 
 export default function ToDoList(){
-    const [taskList, setTaskList] = useState([]);
-    const [finishedTasks, setFinishedTasks] = useState([]);
     const [allTasks, setAllTasks] = useState([]);
     const [inputValue, setInputValue] = useState("");
 
